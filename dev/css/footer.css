@@ -1,0 +1,123 @@
+.Section_Footer {
+	color: #ffffff;
+	background-color: #2a2a2a ; 
+	-webkit-box-sizing: border-box; 
+	        box-sizing: border-box;
+}
+.Footer__top {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	border-bottom: 1px solid #ffffff;
+	padding: 18px 0;
+	
+}
+.Social {
+	text-align: center;
+}
+.Social__text,
+.Social__link {
+	display: inline-block;
+	vertical-align: middle;
+}
+.Social__text {
+	font-size: 16px;
+	font-weight: 400;
+	margin: 0 10px 0 0;
+}
+.Social__link {
+	border: 1px solid white;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 50px;
+	margin-right: 18px;
+	width: 50px;
+	-webkit-transition: border-radius 0.5s,
+				border 0.5s;
+	-o-transition: border-radius 0.5s,
+				border 0.5s;
+	transition: border-radius 0.5s,
+				border 0.5s;
+}
+.Social__link:hover {
+	border-radius: 25%;
+	border: 1px solid #ff6c00;
+}
+.Social__link_last {
+	margin-right: 0;
+}
+.Social__link_vk {
+	background: url(../img/icons/Social_Vkontakte.png) no-repeat center;
+}
+.Social__link_fb {
+	background: url(../img/icons/Social_Facebook.png) no-repeat center;
+}
+.Social__link_ok {
+	background: url(../img/icons/Social_odnoklassniki.png) no-repeat center;
+}
+.Social__link_pin {
+	background: url(../img/icons/Social_Pinterest.png) no-repeat center;
+}
+.Social__link_pinme {
+	background: url(../img/icons/Social_Pin me.png) no-repeat center;
+}
+.Social__link_inst {
+	background: url(../img/icons/Social_Instagram.png) no-repeat center;
+}
+.Social__link_youtube {
+	background: url(../img/icons/Social_Youtube.png) no-repeat center;
+}
+.Footer__middle {
+	border-bottom: 1px solid #ffffff;
+	padding: 35px 0 40px 0;
+}
+.AboutUs__logo {
+	background: url(../img/icons/Footer__logo.png) no-repeat center;
+	cursor: pointer;
+	display: inline-block;
+	height: 60px;
+	vertical-align: top;
+	width: 100px;
+}
+.AboutUs__logo:hover {
+	background: url(../img/icons/Header__logo.png) no-repeat center;
+}
+.AboutUs__number {
+	font-size: 30px;
+}
+.AboutUs__text {
+	font-size: 13px;
+	margin: 5px 0;
+}
+.AboutUs__wrapper {
+	display: inline-block;
+	margin-left: 15px;
+}
+.AboutUs__number_star::after {
+	display: inline-block;
+	content: "*";
+	height: 5px;
+	width: 5px;
+	top: -5px;
+}
+.FootMenu__text,
+.FootMenu__link { 
+	font-size: 16px;
+}
+.FootMenu__text {
+	font-weight: 500;
+}
+.FootMenu__link {
+	display: block;
+	color: #cacaca;
+	font-weight: 400;
+	margin-top: 15px;
+}
+.Footer__bottom {
+	padding: 37px 0;
+}
+.Copyright {
+	font-size: 12px;
+	font-weight: 400;
+	margin: 0;
+	text-align: center;
+}

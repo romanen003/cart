@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>cart</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="javascript/js.js"></script>
+	</head>
+<body>
+	<div class="Page">
+	<header class="Header">
+	<div class="Header__info">
+		<div class="Container">
+			<div class="Grid">
+				<div class="Grid__item Grid__item_40">
+					<div class="Number Number_header">
+						<a class="Number__phone" href="tel:88005007555">8 (800) 500-75-55</a>
+						<p class="Number__text">Бесплатный звонок по России</p>
+					</div>
+				</div>
+				<div class="Grid__item Grid__item_60">
+					<div class="Social1 Social_header">
+						<a class="Social__Link Social__Link_pic1" href="#" target="_blank">Звездный блог</a>
+						<a class="Social__Link Social__Link_pic2" href="#" target="_blank">Смотрите нас на YouTube</a>
+						<a class="Social__Link Social__Link_pic3" href="#" target="_blank">Смотрите наш прямой эфир</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="Header__middle">
+		<div class="Container">
+			<div class="Grid">
+				<div class="Grid__item">
+					<div class="Logo Logo_header">
+						<a class="Logo__link" href="#">
+							<img class="Logo__img" src="img/icons/Header__logo.png" alt="logo">
+							<span class="Logo__Text">New Look</span>
+						</a>
+					</div>
+					<div class="Search Search_header">
+						<input class="Search__input" type="text" placeholder="Поиск по сайту">
+						<button class="Search__button"></button>
+					</div>
+				</div>
+				<div class="Grid__item Grid__item_alignRight">
+					<a class="User" href="#">Анастасия</a>
+					<a class="Basket" href="#">
+						В корзине<br> товаров :
+						<span class="Basket__count"> 0</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="Header__menu">
+		<div class="Container">	
+			<ul class="Menu">
+				<li class="Menu__element">
+					<nav class="SubMenu">
+						<a class="Submenu__link Submenu__link_first" href="">Женская одежда</a>
+						<a class="Submenu__link" href="">Мужская одежда</a>
+						<a class="Submenu__link" href="">Аксессуары</a>
+					</nav>
+					<a class="Menu__link Menu__link_first" href="#">Одежда и аксессуары</a>
+				</li>
+				<li class="Menu__element"><a class="Menu__link" href="#">Обувь</a></li>
+				<li class="Menu__element"><a class="Menu__link" href="#">Украшения</a></li>
+				<li class="Menu__element"><a class="Menu__link" href="#">Красота и здоровье</a></li>
+				<li class="Menu__element"><a class="Menu__link" href="#">Товары для дома</a></li>
+				<li class="Menu__element"><a class="Menu__link" href="#">Товары для кухни</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="Header__Submenu"></div>
+</header>
+	<section class="Section Section_Content">
+	<div class="Container">
+		<div class="Content">
+			<div class="Content__wrapper Content__wrapper_heading">
+				<div class="Heading">Ваша корзина</div>
+			</div>
+			<div class="Content__wrapper">
+				<div class="Cart">
+					<div class="Cart__wrapper Cart__wrapper_param">
+						<div class="Grid">
+							<div class="Grid__item">
+								<div class="Param">
+									<div class="Param__element Param__element_first">Товар</div>
+									<div class="Param__element">Описание</div>
+								</div>
+							</div>
+							<div class="Grid__item">
+								<div class="Param">
+									<div class="Param__element Param__element_33">Количество</div>
+									<div class="Param__element Param__element_33 Param__element_center">Цена</div>
+									<div class="Param__element Param__element_33 Param__element_right">Удалить</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="Cart__wrapper Cart__wrapper_items">
+					</div>
+					<div class="Content__wrapper Content__wrapper_summ">
+						<div class="Grid">
+							<div class="Grid__item Grid__item_top">
+								<div class="Promo">
+									<p class="Promo__text">Есть промокод?</p>
+									<input class="Promo__input" type="text" placeholder="Введите промокод">
+									<button class="Button Button_promo">Применить</button>
+
+								</div>
+							</div>
+							<div class="Grid__item Grid__item_alignRight Grid__item_top">
+								<div class="Summary">
+									<div class="Summary__wrapper">
+										<p class="Summary__text ">Сумма заказа:</p>
+										<p class="Summary__text Summary__text_promo">Промокод:</p>
+										<p class="Summary__text Summary__text_all">Всего:</p>
+									</div>
+									<div class="Summary__wrapper Summary__wrapper_right">
+										<div class="Summary__summ">0 руб.</div>
+										<div class="Summary__promoSumm">0 руб.</div>
+										<div class="Summary__summAll">0 руб.</div>
+									</div>
+									<button class="Button button_summary">Оформить заказ</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="Content__wrapper Content__wrapper_add">
+						<div class="Content__wrapper Content__wrapper_heading">
+							<div class="Heading">Добавьте к вашему заказу</div>
+						</div>
+						<div class="Grid">
+							<div class="Grid__item Grid__item_quarter Grid__item_top">
+								<div class="AddBox">
+									<img class="Add__photo" src="img/icons/Add__item1.png" alt="item">
+									<p class="Add__model">Солнечные очки зеленого цвета в стиле ретро</p>
+									<p class="Add__price">2 450 руб.</p>
+								</div>
+							</div>
+							<div class="Grid__item Grid__item_quarter Grid__item_top">
+								<div class="AddBox">
+									<img class="Add__photo" src="img/icons/Add__item2.png" alt="item">
+									<p class="Add__model">Шляпа</p>
+									<p class="Add__price">800 руб.</p>
+								</div>
+							</div>
+							<div class="Grid__item Grid__item_quarter Grid__item_top">
+								<div class="AddBox">
+									<img class="Add__photo" src="img/icons/Add__item3.png" alt="item">
+									<p class="Add__model">Платье-миди с расклешенной юбкой</p>
+									<p class="Add__price">2 450 руб.</p>
+								</div>
+							</div>
+							<div class="Grid__item Grid__item_quarter Grid__item_top">
+								<div class="AddBox">
+									<img class="Add__photo" src="img/icons/Add__item4.png" alt="item">
+									<p class="Add__model">Платье-миди с расклешенной юбкой</p>
+									<p class="Add__price">2 450 руб.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	<footer class=" Section Section_Footer">
+	<div class="Footer__top">
+		<div class="Container">
+			<div class="Social">
+				<p class="Social__text">SHOP24 в социальных сетях:</p>
+				<a class="Social__link Social__link_vk" href="#"></a>
+				<a class="Social__link Social__link_fb" href="#"></a>
+				<a class="Social__link Social__link_ok" href="#"></a>
+				<a class="Social__link Social__link_pin" href="#"></a>
+				<a class="Social__link Social__link_pinme" href="#"></a>
+				<a class="Social__link Social__link_inst" href="#"></a>
+				<a class="Social__link Social__link_last Social__link_youtube" href="#"></a>
+			</div>
+		</div>
+	</div>
+	<div class="Footer__middle">
+		<div class="Container">
+			<div class="Grid">
+				<div class="Grid__item Grid__item_small Grid__item_top">
+					<div class="AboutUs">
+						<div class="AboutUs__logo"></div>
+						<div class="AboutUs__wrapper">
+							<a class="AboutUs__number AboutUs__number_star" href="tel:88005007555">8 (800) 500-75-55</a>
+							<p class="AboutUs__text">*Бесплатный звонок по всей России</p>
+							<a class="AboutUs__number" href="tel:84957339603">8 (495) 733-96-03</a>
+						</div>
+					</div>
+				</div>
+				<div class="Grid__item Grid__item_16 Grid__item_top">
+					<nav class="FootMenu">
+						<div class="FootMenu__text">Каталог товаров</div>
+						<a class="FootMenu__link" href="#">Одежда и аксессуары</a>
+						<a class="FootMenu__link" href="#">Обувь</a>
+						<a class="FootMenu__link" href="#">Украшения</a>
+						<a class="FootMenu__link" href="#">Красота и здоровье</a>
+						<a class="FootMenu__link" href="#">Товары для дома, дачи и отдыха</a>
+						<a class="FootMenu__link" href="#">Товары для кухни</a>
+					</nav>
+				</div>
+				<div class="Grid__item Grid__item_16 Grid__item_top">
+					<nav class="FootMenu">
+						<div class="FootMenu__text">Заказ</div>
+						<a class="FootMenu__link" href="#">Оплата и доставка</a>
+						<a class="FootMenu__link" href="#">Возврат</a>
+						<a class="FootMenu__link" href="#">Помощь</a>
+						<a class="FootMenu__link" href="#">Благотворительный Фонд Константина Хабенского</a>
+						<a class="FootMenu__link" href="#">Гарантия на дополнительное обслуживание товара</a>
+						<a class="FootMenu__link" href="#">Пользовательское соглашение</a>
+					</nav>
+				</div>
+				<div class="Grid__item Grid__item_16 Grid__item_top">
+					<nav class="FootMenu">
+						<div class="FootMenu__text">Shop24</div>
+						<a class="FootMenu__link" href="#">Смотреть прямой эфир</a>
+						<a class="FootMenu__link" href="#">Расписание передач</a>
+						<a class="FootMenu__link" href="#">Акции</a>
+						<a class="FootMenu__link" href="#">Личный кабинет</a>
+						<a class="FootMenu__link" href="#">Поиск и карта сайта</a>
+						<a class="FootMenu__link" href="#">Карта брендов</a>
+						<a class="FootMenu__link" href="#">Обратная связь</a>
+					</nav>
+				</div>
+				<div class="Grid__item Grid__item_16 Grid__item_top">
+					<nav class="FootMenu">
+						<div class="FootMenu__text">Информация</div>
+						<a class="FootMenu__link" href="#">О канале</a>
+						<a class="FootMenu__link" href="#">Возврат</a>
+						<a class="FootMenu__link" href="#">Сотрудничество</a>
+						<a class="FootMenu__link" href="#">Покупайте с нами!</a>
+						<a class="FootMenu__link" href="#">Контакты</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="Footer__bottom">
+		<p class="Copyright">
+			Copyright © Товар ООО «Стиль и Мода», 2014-2016. Все права защищены. <br>
+			При использовании материалов сайта ссылка на www.shop24.com обязательна.<br>
+			115193, Москва, ул. Кожуховская 5-я, д. 9, помещение VII<br>
+			Телефон  8 800 500-75-55
+		</p>
+	</div>
+</footer>
+	</div>
+</body>
+</html>

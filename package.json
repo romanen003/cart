@@ -1,0 +1,16 @@
+{
+  "name": "cart",
+  "version": "1.0.0",
+  "author": "romanGusev",
+  "license": "none",
+  "repository": "https://github.com/romanen003/cart.git",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-connect": "^3.2.2",
+    "gulp-html-replace": "^1.5.5",
+    "gulp-htmlincluder": "^0.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp.spritesmith": "^6.2.1"
+  }
+}
