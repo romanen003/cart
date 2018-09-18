@@ -9,69 +9,61 @@ var cart = {
 		promocode: 0,
 		addItem: function(obj){
 					this.items.push(obj);
-					cart.summ();
-					cart.Allcount();
-					cart.Allsumm();
-					cart.summPromo();
+					this.ShowAllSumm();
+					this.Allcount();
+					this.ShowAllSumm();
+					this.summPromo();
 				},
 		deleteItem: function(model,size){
-						var j = cart.searchItem(model,size);
-						console.log(j);
-						cart.summ(j)
+						var j = this.searchItem(model,size);
 						if(j != undefined) {
 							this.items.splice(j,1) 
 						};
-						cart.Allcount();
-						cart.Allsumm();
-						cart.summ();
-						cart.summPromo();
+						this.Allcount();
+						this.ShowAllSumm();
+						this.summPromo();
 					},
 		Allcount: function(){
-						 var count = this.items.reduce(function(acc,item){
-							if (item.count > 0) {
-								return acc + item.count;
-							}
-							return acc;
-						},0)
+					 var count = this.items.reduce(function(acc,item){
+									if (item.count > 0) {
+										return acc + item.count;
+									}
+									return acc;
+								},0)
 
-						document.querySelector('.Basket__count').innerHTML = count;
+					qs('.Basket__count').innerHTML = count;
 					},
 		updateItem: function(move,model,size){
-						var j = cart.searchItem(model,size);
+						var j = this.searchItem(model,size);
 						if (move == '+') {
 							this.items[j].count += 1;
 						};
 						if (move == '-' ) {
 							this.items[j].count -= 1;
 						};
-						cart.Allcount();
-						cart.Allsumm();
-						cart.summ();
-						cart.summPromo();
+						this.Allcount();
+						this.ShowAllSumm();
+						this.summPromo();
 					},
 		updateItem: function(move,model,size){
-						var j = cart.searchItem(model,size);
+						var j = this.searchItem(model,size);
 						if (move == '+') {
 							this.items[j].count += 1;
 						};
 						if (move == '-' ) {
 							this.items[j].count -= 1;
 						};
-						cart.Allcount();
-						cart.Allsumm();
-						cart.summ();
-						cart.summPromo();
+						this.Allcount();
+						this.ShowAllSumm();
+						this.summPromo();
 					},
-		summ: function(){
-					for (var i = 0; i < this.items.length; i++) {
-						this.items[i].summ = (this.items[i].count * this.items[i].price);
-					}
-				},
-		Allsumm: function(){
+		ShowAllSumm: function(){
 					var allsumm = this.items.reduce(function(acc,item){
-						return acc + (item.count * item.price);
+						item.summ = item.count * item.price;
+						return acc + item.summ;
 					},0);
-					document.querySelector('.Summary__summ').innerHTML = allsumm + ' руб.';
+					qs('.Summary__summ').innerHTML = allsumm.toLocaleString() + ' руб.';
+					return allsumm;
 				},
 		getsumm: function(model,size){
 						var j = this.items.reduce(function(acc,item){
@@ -91,19 +83,21 @@ var cart = {
 						},0)
 					},
 		summPromo: function(){
-					 var a = parseInt(document.querySelector('.Summary__summ').innerHTML) - cart.promocode;
-					 cart.promocode === 0 ? document.querySelector('.Summary__promoSumm').innerHTML = 0 + ' руб.' : document.querySelector('.Summary__promoSumm').innerHTML = '-'+cart.promocode+' руб.';
-					 document.querySelector('.Summary__summAll').innerHTML = a + ' руб.';
+					 var a = cart.ShowAllSumm() - this.promocode;
+					 this.promocode === 0 ? qs('.Summary__promoSumm').innerHTML = 0 + ' руб.' : qs('.Summary__promoSumm').innerHTML = '-'+this.promocode.toLocaleString()+' руб.';
+					 qs('.Summary__summAll').innerHTML = a.toLocaleString() + ' руб.';
 					}
 };
 
 
 
 window.onload = function() {
-	for (var i = 0; i < arr.length; i++) {
-		createItem(arr[i]);
-		cart.addItem(arr[i]);
-	};
+	arr.forEach(function(element){
+		createItem(element);
+		cart.addItem(element);
+	});
+		
+
 	var ItemsNodes = document.querySelectorAll('.Item.Item_indent');
 	for (var i = 0; i < ItemsNodes.length; i++) {
 		ItemsNodes[i].addEventListener('click',function(event){
@@ -123,7 +117,7 @@ window.onload = function() {
 					case'Count__plus' : 
 						cart.updateItem('+',model,size)
 						target.previousElementSibling.innerHTML ++;
-						currentTarget.querySelector('.Price__input').innerHTML = cart.getsumm(model,size);
+						currentTarget.querySelector('.Price__input').innerHTML = cart.getsumm(model,size).toLocaleString();
 						break;
 					case'Close' : 
 						cart.deleteItem(model,size);
@@ -136,21 +130,21 @@ window.onload = function() {
 
 	};
 
-	var promoButton = document.querySelector('.Button_promo');
-	var promoInput  =document.querySelector('.Promo__input');
+	var promoButton = qs('.Button_promo');
+	var promoInput  = qs('.Promo__input');
 
 	promoButton.addEventListener('click',function(e){
-	var promoNode = document.querySelector('.Promo')
-		if(promoInput.value.trim() == 123456){
-			cart.promocode = 1800;
-			cart.summPromo();
-		}
+		var promoNode = qs('.Promo')
+			if(promoInput.value.trim() == 123456){
+				cart.promocode = 1800;
+				cart.summPromo();
+			}
 	});
 	function fixFooter(){
-		var pageNode = document.querySelector('.Page');
-		var contentNode = document.querySelector('.Section_Content');
-		var footerNode = document.querySelector('.Section_Footer');
-		var addNode = document.querySelector('.Content__wrapper_add');
+		var pageNode = qs('.Page');
+		var contentNode = qs('.Section_Content');
+		var footerNode = qs('.Section_Footer');
+		var addNode = qs('.Content__wrapper_add');
 
 		if (document.querySelector('.Basket__count').innerHTML == 0) {
 			pageNode.classList.add('Page_flex');
@@ -194,7 +188,7 @@ function createItem(obj){
 	count.appendChild(buttonPlus);
 
 	var price = cn('div','Price');
-	var priceInput = cn('div','Price__input',obj.price);
+	var priceInput = cn('div','Price__input',obj.price.toLocaleString());
 	var priceEu = cn('span','Price__Eu','руб.');
 	price.appendChild(priceInput);
 	price.appendChild(priceEu);
@@ -213,7 +207,7 @@ function createItem(obj){
 	itemNode.setAttribute('data-model',obj.model);
 	itemNode.setAttribute('data-size',obj.size);
 
-	var container = document.querySelector('.Cart__wrapper_items');
+	var container = qs('.Cart__wrapper_items');
 	container.appendChild(itemNode);
 }
 function cn(tag,classCss,text,atrType,artValue,atrType2,artValue2){
@@ -227,3 +221,12 @@ function cn(tag,classCss,text,atrType,artValue,atrType2,artValue2){
 		element.setAttribute(atrType2,artValue2)}
 	return element;
 };
+function qs(css){
+	return document.querySelector(css);
+}
+
+
+
+
+
+
