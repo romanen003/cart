@@ -75,9 +75,14 @@ var cart = {
 
 
 window.onload = function() {
+	setTimeout(function(){
+		showModalWindow();
+		authoriz();
+	},1000);
+
 	arr.forEach(function(element){
-		createItem(element);
-		cart.addItem(element);
+			createItem(element);
+			cart.addItem(element);
 	});
 		
 
@@ -115,7 +120,6 @@ window.onload = function() {
 	};
 	menu();
 	promocode();
-
 
 	function fixFooter(){
 		var pageNode = qs('.Page');
@@ -224,3 +228,35 @@ function cn(tag,classCss,text,atrType,artValue,atrType2,artValue2){
 function qs(css){
 	return document.querySelector(css);
 };
+function showModalWindow(){
+	var el = cn('div','modalOverlay');	
+	var modal = cn('div','modal');
+	var modalInput = cn('input','modal__input');
+	var modalHeader = cn('h1','modal__header','Привет! Представься');
+	var modalBtn = cn('button','Button modal__btn','Войти');
+	modalInput.placeholder = 'Ваше имя';
+	modal.appendChild(modalHeader);
+	modal.appendChild(modalInput);
+	modal.appendChild(modalBtn);
+	el.appendChild(modal);
+	document.querySelector('.Page').appendChild(el);
+}
+function isValidName(name){
+	return name.toString() ? true : false;
+}
+function authoriz(){
+	var button = qs('.modal__btn');
+	var input = qs('.modal__input');
+	var overlay = qs('.modalOverlay');
+	button.addEventListener('click',function(event){
+		if (isValidName(input.value) && input.value.length < 15) {
+			qs('.User').innerHTML = input.value;
+			overlay.parentElement.removeChild(overlay);
+		}else{
+			input.classList.add('modal__error');
+			setTimeout(function(){
+				input.classList.remove('modal__error');
+			},1000)
+		}
+	});
+}

@@ -1,0 +1,50 @@
+.modalOverlay {
+	background-color: rgba(0,0,0,0.6);
+	left: 0;
+	top: 0;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+}
+.modal {
+	border-radius: 10px;
+	background: black;
+	border: 1px solid grey;
+	box-sizing: border-box;
+	color: #ff6c00;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	padding: 10px;
+	height: 150px;
+	width: 300px;
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+}
+.modal__header {
+	font-size: 15px;
+	text-transform: uppercase;
+
+}
+.modal__input {
+	border-radius: 10px;
+	border: 1px solid grey;
+	color: #ff6c00;
+	font-size: 15px;
+	padding-left: 10px;
+	line-height: 30px;
+	width: 80%;
+}
+.modal__btn {
+	background: grey;
+	color: #ff6c00;
+	line-height: 35px;
+	margin-top: 10px;
+	outline: 0;
+	width: 60%;
+}
+.modal__error {
+	border: 2px solid red;
+}
