@@ -20,10 +20,7 @@ var cart = {
 					},
 		Allcount: function(){
 					 var count = this.items.reduce(function(acc,item){
-									if (item.count > 0) {
-										return acc + item.count;
-									}
-									return acc;
+									return acc + item.count;
 								},0)
 
 					qs('.Basket__count').innerHTML = count;
@@ -95,6 +92,7 @@ window.onload = function() {
 					case'del' : 
 						cart.updateItem('-',model,size)
 						target.nextElementSibling.innerHTML --;
+						currentTarget.querySelector('.Price__input').innerHTML = cart.getsumm(model,size).toLocaleString();
 						if (target.nextElementSibling.innerHTML == 0) {
 							cart.deleteItem(model,size);
 							currentTarget.parentElement.removeChild(currentTarget);
@@ -115,17 +113,10 @@ window.onload = function() {
 		});
 
 	};
+	menu();
+	promocode();
 
-	var promoButton = qs('.Button_promo');
-	var promoInput  = qs('.Promo__input');
 
-	promoButton.addEventListener('click',function(e){
-		var promoNode = qs('.Promo')
-			if(promoInput.value.trim() == 123456){
-				cart.promocode = 1800;
-				cart.summPromo();
-			}
-	});
 	function fixFooter(){
 		var pageNode = qs('.Page');
 		var contentNode = qs('.Section_Content');
@@ -144,14 +135,37 @@ window.onload = function() {
 			footerNode.classList.remove('Section_FooterFlex');
 		}
 	}
+	function promocode(){
+		var promoButton = qs('.Button_promo');
+		var promoInput  = qs('.Promo__input');
+
+		promoButton.addEventListener('click',function(e){
+			var promoNode = qs('.Promo')
+				if(promoInput.value.trim() == 123456){
+					cart.promocode = 1800;
+					cart.summPromo();
+				}
+		});
+	};
+	function menu (){
+	    var MenuNode = qs('.Header__menu');
+	    var showMenu = qs('.burgerBody');
+	    var hideMenu = qs('.burger');
+	    showMenu.addEventListener('click',function(event){
+	        MenuNode.style.cssText = 'left: 0px';
+	    })
+	    hideMenu.addEventListener('click',function(event){
+	        MenuNode.style.cssText = 'left: -210px';
+	    })
+	};
 };
 
 
 function createItem(obj){
 	var itemNode = cn('div','Item Item_indent');
 	var gridNode = cn('div','Grid');
-	var gridItemNode = cn('div','Grid__item');
-	var gridItem2Node = cn('div','Grid__item Grid__item_top');
+	var gridItemNode = cn('div','Grid__item Grid__item_100mC');
+	var gridItem2Node = cn('div','Grid__item Grid__item_top Grid__item_100mC');
 
 	var itemImg = cn('img','Item__img','','src', obj.img,'alt', 'pic');
 	var itemInfo = cn('div','Item__info');

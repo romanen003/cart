@@ -137,6 +137,10 @@
   color: #ff6c00;
 }
 
+.Price {
+  text-align: center;
+}
+
 .Count__counter {
   display: inline-block;
   font-size: 18px;
@@ -150,10 +154,14 @@
   font-weight: 500;
 }
 
+.Price__Eu {
+  padding-left: 5px;
+}
+
 .Price__input {
   display: inline-block;
   text-align: center;
-  width: 120px;
+  width: auto;
 }
 
 .Close {
@@ -554,6 +562,7 @@
   border-bottom: 2px solid rgb(228, 228, 228);
   background-color: #e4e4e4;
   height: 50px;
+  transition: 1s;
 }
 
 .Menu {
@@ -622,6 +631,13 @@
   border-bottom: 2px solid rgb(228, 228, 228);
   padding-bottom: 40px;
 }
+.Page {
+  left: 0;
+  overflow: hidden;
+  position: relative;
+  transition: 1s;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -734,4 +750,541 @@ body,
   -webkit-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
+}
+
+@media screen and (max-width: 480px) {
+  .Container {
+    width: 100%;
+  }
+
+  .Grid__item_100t,
+  .Grid__item_100tm {
+    text-align: center;
+    width: 100%;
+  }
+
+  .Section_Content {
+    padding-top: 20px;
+  }
+
+  .Menu {
+    margin-top: 40px;
+  }
+
+  .burger {
+    background: url("../img/icons/Content__close.png") no-repeat center;
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .burgerBody {
+    background: url("../img/icons/burger_icon.png") no-repeat center;
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .Logo__Text {
+    font-size: 40px;
+  }
+
+  .Social__Link {
+    font-size: 0;
+    margin: 0;
+  }
+
+  .Header__Submenu {
+    display: none;
+  }
+
+  .Number_header {
+    position: relative;
+    padding: 5px 0;
+    margin-left: 0;
+  }
+
+  .Header__info {
+    display: none;
+  }
+
+  .Search_header {
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: 65%;
+    margin-left: 10px;
+    width: 50px;
+  }
+
+  .Search__input {
+    display: none;
+    width: 20px;
+  }
+
+  .Content__wrapper_heading::before,
+  .Content__wrapper_heading::after {
+    width: 0%;
+  }
+
+  .Param__element_first,
+  .Item__img {
+    width: 95px;
+  }
+
+  .Item__img {
+    height: 120px;
+  }
+
+  .Item__info {
+    margin-left: 5px;
+  }
+
+  .Item__model {
+    width: 110px;
+  }
+
+  .Item__index {
+    margin: 5px 0px;
+  }
+
+  .Price {
+    width: 100%;
+  }
+
+  .Count {
+    width: 100%;
+  }
+
+  .Close {
+    right: 0;
+    top: 0;
+  }
+
+  .Param__element {
+    font-size: 15px;
+  }
+
+  .Item__model,
+  .Item__size,
+  .Item__color {
+    font-size: 12px;
+  }
+
+  .Count__del,
+  .Count__plus,
+  .Count__counter {
+    width: 100px;
+  }
+
+  .Count__del,
+  .Count__plus {
+    border-radius: 10px;
+  }
+
+  .Promo__input {
+    width: 200px;
+  }
+
+  .Button_promo {
+    display: block;
+    margin: 15px auto 0 auto;
+  }
+
+  .Content__wrapper_add {
+    padding-bottom: 40px;
+  }
+
+  .Social__text {
+    display: block;
+    margin: 0 0 15px 0;
+  }
+
+  .Social__link {
+    margin-right: 5px;
+    height: 32px;
+    width: 32px;
+  }
+
+  .Grid__item_small,
+  .Grid__item_16 {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .FootMenu__link {
+    display: none;
+  }
+
+  .AboutUs__number {
+    font-size: 13px;
+  }
+
+  .AboutUs__logo,
+  .AboutUs__wrapper {
+    vertical-align: middle;
+  }
+
+  .AboutUs__text {
+    font-size: 10px;
+  }
+
+  .Copyright {
+    font-size: 9px;
+  }
+
+  .Grid__item_m50 {
+    width: 50%;
+  }
+
+  .Grid__item_m100 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .Logo__img {
+    width: 50px;
+  }
+
+  .Cart__wrapper_param {
+    display: none;
+  }
+
+  .Grid__item_100mC {
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .Header__menu {
+    position: fixed;
+    left: -210px;
+    top: 0;
+    height: auto;
+    width: 210px;
+    z-index: 2;
+  }
+
+  .Menu__element {
+    display: block;
+  }
+
+  .Menu__element:hover .SubMenu {
+    display: none;
+  }
+
+  .Menu__link {
+    border-top: 1px solid grey;
+    display: block;
+    margin-left: 0;
+  }
+
+  .Add__photo {
+    width: 90%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .Container {
+    width: 100%;
+  }
+
+  .Add__photo {
+    width: 90%;
+  }
+
+  .Grid__item_100t,
+  .Grid__item_100tm {
+    text-align: center;
+    width: 100%;
+  }
+
+  .Grid__item_100tm {
+    margin-top: 10px;
+  }
+
+  .Logo__Text {
+    font-size: 40px;
+  }
+
+  .Search_header {
+    margin-left: 100px;
+  }
+
+  .Search__input {
+    width: 120px;
+  }
+
+  .Content__wrapper_heading::before,
+  .Content__wrapper_heading::after {
+    width: 25%;
+  }
+
+  .Param__element_first,
+  .Item__img {
+    width: 95px;
+  }
+
+  .Item__img {
+    height: 100px;
+  }
+
+  .Item__info {
+    margin-left: 5px;
+  }
+
+  .Item__model {
+    width: 110px;
+  }
+
+  .Item__index {
+    margin: 5px 0px;
+  }
+
+  .Price {
+    width: 50%;
+    vertical-align: top;
+  }
+
+  .Count {
+    width: 30%;
+  }
+
+  .Close {
+    right: 0;
+    top: 0;
+  }
+
+  .Param__element {
+    font-size: 15px;
+  }
+
+  .Item__model,
+  .Item__size,
+  .Item__color {
+    font-size: 12px;
+  }
+
+  .Count__del,
+  .Count__plus,
+  .Count__counter {
+    width: 100%;
+  }
+
+  .Count__del,
+  .Count__plus {
+    border-radius: 10px;
+  }
+
+  .Promo__input {
+    width: 200px;
+  }
+
+  .Button_promo {
+    margin: 15px 0 0 0;
+  }
+
+  .Content__wrapper_add {
+    padding-bottom: 40px;
+  }
+
+  .Social__text {
+    display: block;
+    margin: 0 0 15px 0;
+  }
+
+  .Social__link {
+    height: 35px;
+    width: 35px;
+  }
+
+  .Grid__item_small,
+  .Grid__item_16 {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .FootMenu__link {
+    display: none;
+  }
+
+  .AboutUs__number {
+    font-size: 13px;
+  }
+
+  .AboutUs__logo,
+  .AboutUs__wrapper {
+    vertical-align: middle;
+  }
+
+  .Menu {
+    margin-top: 40px;
+  }
+
+  .Section_Content {
+    padding-top: 20px;
+  }
+
+  .burger {
+    background: url("../img/icons/Content__close.png") no-repeat center;
+    display: inline-block;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .burgerBody {
+    background: url("../img/icons/burger_icon.png") no-repeat center;
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+    top: 15px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .Header__Submenu {
+    display: none;
+  }
+
+  .Header__menu {
+    position: fixed;
+    left: -210px;
+    top: 0;
+    height: auto;
+    width: 210px;
+    z-index: 2;
+  }
+
+  .Menu__element {
+    display: block;
+  }
+
+  .Menu__element:hover .SubMenu {
+    display: none;
+  }
+
+  .Menu__link {
+    border-top: 1px solid grey;
+    display: block;
+    margin-left: 0;
+  }
+}
+@media ( min-width: 769px) and (max-width: 992px) {
+  .Container {
+    width: 750px;
+  }
+
+  .Add__photo {
+    width: 90%;
+  }
+
+  .Grid__item_100t {
+    text-align: center;
+    width: 100%;
+  }
+
+  .Logo__Text {
+    display: none;
+  }
+
+  .Search_header {
+    margin-left: 20px;
+  }
+
+  .Item__info {
+    margin-left: 5px;
+  }
+
+  .Item__model {
+    width: 150px;
+  }
+
+  .Button_promo {
+    margin: 15px 0 0 0;
+  }
+
+  .Social__link {
+    height: 30px;
+    width: 30px;
+  }
+
+  .AboutUs {
+    text-align: center;
+  }
+
+  .AboutUs__wrapper {
+    margin: 25px 0 0 0;
+  }
+
+  .AboutUs__number {
+    font-size: 25px;
+  }
+
+  .FootMenu__text,
+  .FootMenu__link {
+    font-size: 10px;
+  }
+
+  .Content__wrapper_heading::before,
+  .Content__wrapper_heading::after {
+    width: 30%;
+  }
+
+  .Menu__link {
+    font-size: 12px;
+  }
+}
+
+@media ( min-width: 993px) and (max-width: 1200px) {
+  .Container {
+    width: 950px;
+  }
+
+  .Grid__item_100t {
+    text-align: right;
+  }
+
+  .Social__Link {
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+  .Logo__Text {
+    display: none;
+  }
+
+  .Item__info {
+    margin-left: 15px;
+  }
+
+  .Button_promo {
+    margin: 10px 0 0 0;
+  }
+
+  .Add__photo {
+    width: 90%;
+  }
+
+  .Content__wrapper_heading::before,
+  .Content__wrapper_heading::after {
+    width: 30%;
+  }
+
+  .AboutUs {
+    text-align: center;
+  }
+
+  .AboutUs__wrapper {
+    margin: 10px 0 0 0;
+  }
 }

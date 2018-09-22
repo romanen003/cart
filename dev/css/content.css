@@ -113,6 +113,9 @@
 .Count__plus:hover{
 	color: #ff6c00;
 }
+.Price {
+	text-align: center;
+}
 .Count__counter {
 	display: inline-block;
 	font-size: 18px;
@@ -124,10 +127,13 @@
 	font-size: 18px;
 	font-weight: 500;
 }
+.Price__Eu {
+	padding-left: 5px;
+}
 .Price__input {
 	display: inline-block;
 	text-align: center;
-	width: 120px;
+	width: auto;
 }
 .Close {
 	display: inline-block;
