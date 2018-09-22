@@ -9,19 +9,14 @@ var cart = {
 		promocode: 0,
 		addItem: function(obj){
 					this.items.push(obj);
-					this.ShowAllSumm();
-					this.Allcount();
-					this.ShowAllSumm();
-					this.summPromo();
+					this.update();
 				},
 		deleteItem: function(model,size){
 						var j = this.searchItem(model,size);
 						if(j != undefined) {
 							this.items.splice(j,1) 
 						};
-						this.Allcount();
-						this.ShowAllSumm();
-						this.summPromo();
+						this.update();
 					},
 		Allcount: function(){
 					 var count = this.items.reduce(function(acc,item){
@@ -41,21 +36,7 @@ var cart = {
 						if (move == '-' ) {
 							this.items[j].count -= 1;
 						};
-						this.Allcount();
-						this.ShowAllSumm();
-						this.summPromo();
-					},
-		updateItem: function(move,model,size){
-						var j = this.searchItem(model,size);
-						if (move == '+') {
-							this.items[j].count += 1;
-						};
-						if (move == '-' ) {
-							this.items[j].count -= 1;
-						};
-						this.Allcount();
-						this.ShowAllSumm();
-						this.summPromo();
+						this.update();
 					},
 		ShowAllSumm: function(){
 					var allsumm = this.items.reduce(function(acc,item){
@@ -86,7 +67,12 @@ var cart = {
 					 var a = cart.ShowAllSumm() - this.promocode;
 					 this.promocode === 0 ? qs('.Summary__promoSumm').innerHTML = 0 + ' руб.' : qs('.Summary__promoSumm').innerHTML = '-'+this.promocode.toLocaleString()+' руб.';
 					 qs('.Summary__summAll').innerHTML = a.toLocaleString() + ' руб.';
-					}
+					},
+		update: function(){
+			this.Allcount();
+			this.ShowAllSumm();
+			this.summPromo();
+		}
 };
 
 
@@ -105,8 +91,8 @@ window.onload = function() {
 			var currentTarget = event.currentTarget;
 			var model = event.currentTarget.getAttribute('data-model');
 			var size = event.currentTarget.getAttribute('data-size');
-				switch(target.className){
-					case'Count__del' : 
+				switch(target.getAttribute('data-move')){
+					case'del' : 
 						cart.updateItem('-',model,size)
 						target.nextElementSibling.innerHTML --;
 						if (target.nextElementSibling.innerHTML == 0) {
@@ -114,12 +100,12 @@ window.onload = function() {
 							currentTarget.parentElement.removeChild(currentTarget);
 						}
 						break;
-					case'Count__plus' : 
+					case'add' : 
 						cart.updateItem('+',model,size)
 						target.previousElementSibling.innerHTML ++;
 						currentTarget.querySelector('.Price__input').innerHTML = cart.getsumm(model,size).toLocaleString();
 						break;
-					case'Close' : 
+					case'close' : 
 						cart.deleteItem(model,size);
 						currentTarget.parentElement.removeChild(currentTarget);
 						fixFooter();
@@ -180,9 +166,9 @@ function createItem(obj){
 
 
 	var count = cn('div','Count');
-	var buttonDel = cn('button','Count__del','-',);
+	var buttonDel = cn('button','Count__del','-','data-move','del');
 	var counter = cn('div','Count__counter',obj.count);
-	var buttonPlus = cn('button','Count__plus','+');
+	var buttonPlus = cn('button','Count__plus','+','data-move','add');
 	count.appendChild(buttonDel);
 	count.appendChild(counter);
 	count.appendChild(buttonPlus);
@@ -193,7 +179,7 @@ function createItem(obj){
 	price.appendChild(priceInput);
 	price.appendChild(priceEu);
 
-	var close = cn('div','Close');
+	var close = cn('div','Close','','data-move','close');
 
 	gridItemNode.appendChild(itemImg);
 	gridItemNode.appendChild(itemInfo);
@@ -223,10 +209,4 @@ function cn(tag,classCss,text,atrType,artValue,atrType2,artValue2){
 };
 function qs(css){
 	return document.querySelector(css);
-}
-
-
-
-
-
-
+};
